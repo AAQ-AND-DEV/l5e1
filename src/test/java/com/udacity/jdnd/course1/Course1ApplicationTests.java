@@ -37,6 +37,35 @@ class Course1ApplicationTests {
 
 	@Test
 	void testReverseFizzBuzz(){
+		FizzBuzzService fbs = new FizzBuzzService();
+	    assertEquals(20, fbs.buzzFizz("Buzz", 4));
+	    assertEquals(15, fbs.buzzFizz("FizzBuzz", 1));
 
+	}
+
+	@Test
+	void testBuzzFizzExceptionFail(){
+		FizzBuzzService fbs = new FizzBuzzService();
+		assertThrows(IllegalArgumentException.class, ()->{
+			fbs.buzzFizz("zero", 5);
+		});
+
+		assertThrows(IllegalArgumentException.class, ()->{
+			fbs.buzzFizz("Buzz", 0);
+		});
+
+		assertThrows(IllegalArgumentException.class, ()->{
+			fbs.buzzFizz("Buzz", -5);
+		});
+	}
+
+	//probly should fail, since really FizzBuzz would be the output of
+	//the standard BuzzFizz for 75
+	@Test
+	void testAmbiguousFizzBuzz(){
+		FizzBuzzService fbs = new FizzBuzzService();
+		assertEquals(75, fbs.buzzFizz("Fizz", 25));
+		assertEquals(75, fbs.buzzFizz("Buzz", 15));
+		assertEquals(75, fbs.buzzFizz("FizzBuzz", 5));
 	}
 }
