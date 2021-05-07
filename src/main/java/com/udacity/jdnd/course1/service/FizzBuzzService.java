@@ -31,4 +31,24 @@ public class FizzBuzzService {
     private boolean divBy(int num, int div) {
         return num % div == 0;
     }
+
+    /**
+     * Reverse fizzBuzz. Takes the output value and returns
+     * the number that would produce it. The occurrence param
+     * indicates how many times the input string should have happened, if counting up from 1.
+     *
+     * For example, if the input is "Buzz" and occurrence is 2, the output should be 10,
+     * because "Buzz" is produced for the values 5 and 10 in FizzBuzz.
+     */
+    public int buzzFizz(String input, int occurrence) {
+        if (input.equals("Fizz")) {
+            return 3 * occurrence;
+        } else if (input.equals("Buzz")) {
+            return 5 * occurrence;
+        } else if (input.equals("FizzBuzz")) {
+            return 15 * occurrence;
+        } else {
+            return Integer.valueOf(input);
+        }
+    }
 }

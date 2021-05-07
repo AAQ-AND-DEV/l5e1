@@ -34,4 +34,9 @@ class Course1ApplicationTests {
 		assertThrows(IllegalArgumentException.class, () -> fbs.fizzBuzz(0));
 		assertThrows(IllegalArgumentException.class, () -> fbs.fizzBuzz(-1));
 	}
+
+	@Test
+	void testReverseFizzBuzz(){
+
+	}
 }
